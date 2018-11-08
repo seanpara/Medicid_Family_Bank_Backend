@@ -1,0 +1,2 @@
+class TangibleAsset < ApplicationRecord
+end
