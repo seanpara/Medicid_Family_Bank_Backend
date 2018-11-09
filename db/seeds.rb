@@ -16,6 +16,16 @@ lorzenzo_money = CurrencyHolding.create(value: 100000,family_member_id: 1)
 laurentian_library = TangibleAsset.create(name: "Laurentian Library", image_src: "http://www.museumsinflorence.com/foto/biblioteca%20lauren/image/str1.jpg", description: "The Laurentian Library (Biblioteca Medicea Laurenziana) is a historic library in Florence, Italy, containing more than 11,000 manuscripts and 4,500 early printed books. Built in a cloister of the Medicean Basilica di San Lorenzo di Firenze under the patronage of the Medici pope Clement VII, the library was built to emphasize that the Medici were no longer merchants but members of intelligent and ecclesiastical society. It contains the manuscripts and books belonging to the private library of the Medici family. The library is renowned for its architecture, designed by Michelangelo, and is an example of Mannerism.", value: 10000, family_member_id: 1)
 
 
+the_david = TangibleAsset.create(name: 'The David', image_src: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/%27David%27_by_Michelangelo_JBU0001.JPG/1024px-%27David%27_by_Michelangelo_JBU0001.JPG", description: "Created by Michelangelo as one of a series of statues of prophets to be positioned along the roofline of the east end of Florence Cathedral, but was instead placed in a public square, outside the Palazzo Vecchio, the seat of civic government in Florence, in the Piazza della Signoria where it was unveiled on 8 September 1504.", value: 27000, family_member_id: 1 )
+
+
+
+
+
+the_david = TangibleAsset.create(name: 'The Pietà', image_src: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Michelangelo%27s_Pieta_5450_cropncleaned_edit.jpg/1280px-Michelangelo%27s_Pieta_5450_cropncleaned_edit.jpg", description: "This famous work of art depicts the body of Jesus on the lap of his mother Mary after the Crucifixion. The theme is of Northern origin. Michelangelo's interpretation of the Pietà is unprecedented in Italian sculpture. It is an important work as it balances the Renaissance ideals of classical beauty with naturalism.", value: 17000, family_member_id: 1 )
+
+
+
 # t.string :name
 # t.string :image_src
 # t.string :description

@@ -31,6 +31,7 @@ class Api::V1::TangibleAssetsController < ApplicationController
   def destroy
     @tangible_asset = TangibleAsset.find(params[:id])
     @tangible_asset.destroy
+    head :no_content
   end
 
   private
