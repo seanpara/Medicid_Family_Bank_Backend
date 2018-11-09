@@ -18,12 +18,15 @@ laurentian_library = TangibleAsset.create(name: "Laurentian Library", image_src:
 
 the_david = TangibleAsset.create(name: 'The David', image_src: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/%27David%27_by_Michelangelo_JBU0001.JPG/1024px-%27David%27_by_Michelangelo_JBU0001.JPG", description: "Created by Michelangelo as one of a series of statues of prophets to be positioned along the roofline of the east end of Florence Cathedral, but was instead placed in a public square, outside the Palazzo Vecchio, the seat of civic government in Florence, in the Piazza della Signoria where it was unveiled on 8 September 1504.", value: 27000, family_member_id: 1 )
 
+the_pieta = TangibleAsset.create(name: 'The Pietà', image_src: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Michelangelo%27s_Pieta_5450_cropncleaned_edit.jpg/1280px-Michelangelo%27s_Pieta_5450_cropncleaned_edit.jpg", description: "This famous work of art depicts the body of Jesus on the lap of his mother Mary after the Crucifixion. The theme is of Northern origin. Michelangelo's interpretation of the Pietà is unprecedented in Italian sculpture. It is an important work as it balances the Renaissance ideals of classical beauty with naturalism.", value: 17000, family_member_id: 1 )
 
 
 
+the_birth_of_venus = TangibleAsset.create(name: 'The Birth of Venus', image_src: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg/2560px-Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg", description: "Depicts the goddess Venus, having emerged from the sea as a fully grown woman, arriving at the sea-shore. The seashell she stands on was a symbol in classical antiquity for a woman's vulva. Thought to be based in part on the Venus de' Medici, an ancient Greek marble sculpture of Aphrodite.", value: 12000, family_member_id: 1 )
 
-the_david = TangibleAsset.create(name: 'The Pietà', image_src: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Michelangelo%27s_Pieta_5450_cropncleaned_edit.jpg/1280px-Michelangelo%27s_Pieta_5450_cropncleaned_edit.jpg", description: "This famous work of art depicts the body of Jesus on the lap of his mother Mary after the Crucifixion. The theme is of Northern origin. Michelangelo's interpretation of the Pietà is unprecedented in Italian sculpture. It is an important work as it balances the Renaissance ideals of classical beauty with naturalism.", value: 17000, family_member_id: 1 )
 
+
+the_sistine_chaple = TangibleAsset.create(name: 'Sistine Chapel', image_src: "https://upload.wikimedia.org/wikipedia/commons/6/64/Creaci%C3%B3n_de_Ad%C3%A1n_%28Miguel_%C3%81ngel%29.jpg" , description: "The Sistine Chapel is a chapel in the Apostolic Palace, the official residence of the Pope, in Vatican City. Originally known as the Cappella Magna, the chapel takes its name from Pope Sixtus IV, who restored it between 1477 and 1480.", value: 92000, family_member_id: 1 )
 
 
 # t.string :name
