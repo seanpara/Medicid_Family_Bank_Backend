@@ -4,7 +4,7 @@ giovanni = FamilyMember.create(name: "Giovanni di Bicci de' Medici", birth_date:
 
 cosimo_the_elder = FamilyMember.create(name: "Cosimo de' Medici", birth_date: "27 September 1389", biography: "Cosimo di Giovanni de' Medici, called 'the Elder' (Italian: il Vecchio) and posthumously 'Father of the Fatherland' (Latin: pater patriae) (27 September 1389 – 1 August 1464), was an Italian banker and politician, the first member of the Medici political dynasty that served as de facto rulers of Florence during much of the Italian Renaissance. Despite his influence, his power was not absolute; Florence's legislative councils at times resisted his proposals throughout his life, and he was always viewed as primus inter pares ('first among equals') rather than an autocrat. His power derived from his wealth as a banker, and he was a great patron of learning, the arts and architecture.", image_src: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Cosimo_di_Medici_%28Bronzino%29.jpg" )
 
-piero_the_gouty = FamilyMember.create(name: "Piero di Cosimo de' Medici", birth_date: "1416", biography: "Piero was the son of Cosimo de' Medici the Elder and Contessina de' Bardi. During his father's life, he did not play an extensive role due to his perpetual poor health, the source of his nickname. His brother Giovanni was named as Cosimo's executor, but predeceased his father. In 1461, Piero was the last Medici elected to the office of Gonfaloniere.[citation needed] His gout often kept him confined to bed. This meant that his bedroom effectively became his office, where he would conduct political meetings. This led to the Medici palace becoming the seat of government in Florence.", image_src: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Piero_di_Cosimo_de%27_Medici.jpg/440px-Piero_di_Cosimo_de%27_Medici.jpg")
+piero_the_gouty = FamilyMember.create(name: "Piero di Cosimo de' Medici", birth_date: "1416", biography: "Piero was the son of Cosimo de' Medici the Elder and Contessina de' Bardi. During his father's life, he did not play an extensive role due to his perpetual poor health, the source of his nickname. His brother Giovanni was named as Cosimo's executor, but predeceased his father. In 1461, Piero was the last Medici elected to the office of Gonfaloniere. His gout often kept him confined to bed. This meant that his bedroom effectively became his office, where he would conduct political meetings. This led to the Medici palace becoming the seat of government in Florence.", image_src: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Piero_di_Cosimo_de%27_Medici.jpg/440px-Piero_di_Cosimo_de%27_Medici.jpg")
 
 lorzenzo = FamilyMember.create(name: "Lorenzo de' Medici", birth_date: "December 2nd, 1469", biography: "Lorenzo de' Medici (1 January 1449 – 8 April 1492) was an Italian statesman, de facto ruler of the Florentine Republic and the most powerful and enthusiastic patron of Renaissance culture in Italy. Also known as Lorenzo the Magnificent (Lorenzo il Magnifico) by contemporary Florentines, he was a magnate, diplomat, politician and patron of scholars, artists and poets. As a patron, he is best known for his sponsorship of artists such as Botticelli and Michelangelo. He held the balance of power within the Italic League, an alliance of states that stabilized political conditions on the Italian peninsula for decades, and his life coincided with the mature phase of the Italian Renaissance and the Golden Age of Florence. The Peace of Lodi of 1454 that he helped maintain among the various Italian states collapsed with his death. He is buried in the Medici Chapel in Florence.", image_src: "https://upload.wikimedia.org/wikipedia/commons/1/10/Lorenzo_de_Medici.jpg")
 
@@ -47,3 +47,80 @@ villa_di_poggio_a_caiano = TangibleAsset.create(name: 'Villa di Poggio a Caiano'
 villa_di_castello = TangibleAsset.create(name: 'Villa di Castello', image_src: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Parco_di_Castello_5.JPG/1920px-Parco_di_Castello_5.JPG", description: "The Villa di Castello, near the hills bordering Florence, Tuscany, central Italy, was the country residence of Cosimo I de' Medici, Grand Duke of Tuscany (1519-1574). The gardens, filled with fountains, statuary, and a grotto, became famous throughout Europe. The villa also housed some of the great art treasures of Florence, including Sandro Botticelli's Renaissance masterpieces The Birth of Venus and Primavera. The gardens of the Villa had a profound influence upon the design of the Italian Renaissance garden and the later French formal garden.", value: 56000, family_member_id: 2)
 
 villa_la_petraia = TangibleAsset.create(name: 'Villa La Petraia', image_src: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Villa_La_Petraia.jpg/800px-Villa_La_Petraia.jpg", description: "Then from 1588, there was a decade of extensive excavation works which transformed the 'stony' nature of the place (hence the name in Petraia, that is full of stones) into dramatic sequence of terraces dominated by the massive main building. It is traditionally attributed to Bernard Buontalenti, even though the only documented certainty is the presence on site of Raphael Pagni.", value: 63000, family_member_id: 1)
+
+
+# puts "done with users"
+# imagearr_total = []
+# culturearr_total = []
+# titlearr_total = []
+# classificationarr_total = []
+# peoplearr_total = []
+# divisionarr_total = []
+# provenancearr_total = []
+# dimensionsarr_total = []
+# datedarr_total = []
+# accessionyeararr_total = []
+# mediumarr_total = []
+# periodarr_total = []
+# i = 1
+# 100.times do
+art_url = "https://api.harvardartmuseums.org/object?apikey=4977dd20-e36e-11e8-a6f8-fdf848b15d51&page=#{i}"
+response_string = RestClient.get(art_url){|response, request, result| response}
+if response_string.code == 200
+response_hash = JSON.parse(response_string)
+filterarr = response_hash["records"].reject {|x| x["primaryimageurl"]===nil}
+imagearr = filterarr.collect do |program|
+  program["primaryimageurl"]
+end
+# culturearr = filterarr.collect do |art|
+#   art["culture"]
+# end
+# titlearr = filterarr.collect do |art|
+#   art["title"]
+# end
+# divisionarr = filterarr.collect do |art|
+#   art["division"]
+# end
+# classificationarr = filterarr.collect {|art|
+#   art["classification"]}
+# provenancearr = filterarr.collect {|art|
+#   art["provenance"]}
+# periodarr = filterarr.collect {|art|
+#   art["period"]}
+# dimensionsarr = filterarr.collect {|art|
+#   art["dimensions"]}
+# datedarr = filterarr.collect {|art|
+#   art["dated"]}
+# accessionyeararr = filterarr.collect {|art|
+#   art["accessionyear"]}
+# mediumarr = filterarr.collect {|art|
+#   art["medium"]}
+# peoplearr = filterarr.collect {|art|
+#   if art["people"]
+#     art["people"][0]["name"]
+#   end
+# }
+# end
+# imagearr_total.push(imagearr)
+# culturearr_total.push(culturearr)
+# titlearr_total.push(titlearr)
+# classificationarr_total.push(classificationarr)
+# peoplearr_total.push(peoplearr)
+# divisionarr_total.push(divisionarr)
+# provenancearr_total.push(provenancearr)
+# dimensionsarr_total.push(dimensionsarr)
+# datedarr_total.push(datedarr)
+# accessionyeararr_total.push(accessionyeararr)
+# mediumarr_total.push(mediumarr)
+# periodarr_total.push(periodarr)
+# i +=1
+# end
+# puts "-------------------------------"
+# puts "creating Artworks"
+# j =0
+# 510.times do
+#   Artwork.create!(title:titlearr_total.flatten[j], img: imagearr_total.flatten[j], culture: culturearr_total.flatten[j],classification: classificationarr_total.flatten[j],people: peoplearr_total.flatten[j],division: divisionarr_total.flatten[j],description: provenancearr_total.flatten[j], diminsions: dimensionsarr_total.flatten[j],dated: datedarr_total.flatten[j],
+#   accessionyear: accessionyeararr_total.flatten[j],period:periodarr_total.flatten[j], medium: mediumarr_total.flatten[j])
+#   j +=1
+# end
+# puts "done with artworks"
